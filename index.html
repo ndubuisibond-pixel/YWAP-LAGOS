@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Meeting Registration</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 500px;
+            background: white;
+            padding: 25px;
+            margin: 40px auto;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo {
+            text-align: center;
+        }
+
+        .logo img {
+            width: 80px;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #2c5364;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #203a43;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- LOGO -->
+        <div class="logo">
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Logo">
+            <h2>Meeting Registration</h2>
+        </div>
+
+        <form onsubmit="submitForm(event)">
+            <input type="text" placeholder="Full Name" id="name" required>
+            <input type="date" id="dob" required>
+            <input type="tel" placeholder="Phone Number" id="phone" required>
+            <input type="text" placeholder="Parent Name" id="parent" required>
+            <input type="text" placeholder="Church Name" id="church" required>
+            <input type="text" placeholder="Father's Name" id="father" required>
+            <input type="text" placeholder="Mother's Name" id="mother" required>
+
+            <textarea placeholder="Why do you want to attend?" id="reason" required></textarea>
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+    <script>
+        function submitForm(event) {
+            event.preventDefault();
+
+            const data = {
+                name: document.getElementById("name").value,
+                dob: document.getElementById("dob").value,
+                phone: document.getElementById("phone").value,
+                parent: document.getElementById("parent").value,
+                church: document.getElementById("church").value,
+                father: document.getElementById("father").value,
+                mother: document.getElementById("mother").value,
+                reason: document.getElementById("reason").value
+            };
+
+            console.log("Registration Data:", data);
+
+            alert("Registration Successful!");
+
+            document.querySelector("form").reset();
+        }
+    </script>
+
+</body>
+
+</html>
